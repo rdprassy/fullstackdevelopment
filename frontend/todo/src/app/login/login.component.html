@@ -2,8 +2,14 @@
 
 <!-- value is interpolation single binding
 ngModel is two way data binding -->
+
+<small *ngIf='invalidLogin'>{{errormessage}}</small>
+
+<div>
 Username: <input type="text" name="username" value="{{username}}" [(ngModel)]="username">
-Password: <input type="password" name="password" value = "{{password}}"> 
+Password: <input type="password" name="password" [(ngModel)]="password"> 
 <button (click) =  handleLogin()>Login</button>
  <!-- no usage of onclick in the button attribute -->
+
+</div>
 
