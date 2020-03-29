@@ -2,14 +2,15 @@
 
 <!-- value is interpolation single binding
 ngModel is two way data binding -->
+<H1>Login!</H1>
+<div class="container">
+    <div class="alert alert-warning" *ngIf='invalidLogin'>{{errormessage}}</div>
 
-<small *ngIf='invalidLogin'>{{errormessage}}</small>
+    <div>
+        Username: <input type="text" name="username" value="{{username}}" [(ngModel)]="username">
+        Password: <input type="password" name="password" [(ngModel)]="password">
+        <button (click)=handleLogin() class="btn btn-success">Login</button>
+        <!-- no usage of onclick in the button attribute -->
 
-<div>
-Username: <input type="text" name="username" value="{{username}}" [(ngModel)]="username">
-Password: <input type="password" name="password" [(ngModel)]="password"> 
-<button (click) =  handleLogin()>Login</button>
- <!-- no usage of onclick in the button attribute -->
-
+    </div>
 </div>
-
