@@ -11,6 +11,7 @@ import { WelcomeDataService } from '../service/data/welcome-data.service';
 export class WelcomeComponent implements OnInit {
 
   name = ''
+  welcomeMessageFromService:string
 
   constructor(
     private route:ActivatedRoute,
@@ -25,8 +26,18 @@ export class WelcomeComponent implements OnInit {
 
   getWelcomeMessage(){
     console.log(this.service.executeHelloWorldBeanService());
-    this.service.executeHelloWorldBeanService().subscribe();
+    this.service.executeHelloWorldBeanService().subscribe(
+      response=>this.handleSuccessfulResponse(response)
+    );// subscribe an asynch method
+    console.log("Last line of welcome message");
     console.log("Get Welcome Message");
+  }
+
+  handleSuccessfulResponse(response){
+    this.welcomeMessageFromService = response.message
+    console.log(response)
+    console.log(response.message)
+
   }
 
 }
