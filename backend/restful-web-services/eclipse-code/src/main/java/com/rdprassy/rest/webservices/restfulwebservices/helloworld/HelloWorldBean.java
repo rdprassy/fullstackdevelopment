@@ -1,4 +1,4 @@
-package com.rdprassy.rest.webservices.restfulwebservices;
+package com.rdprassy.rest.webservices.restfulwebservices.helloworld;
 
 public class HelloWorldBean {
 

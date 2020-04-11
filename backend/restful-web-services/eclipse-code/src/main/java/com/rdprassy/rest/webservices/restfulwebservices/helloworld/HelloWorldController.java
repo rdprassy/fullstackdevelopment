@@ -1,4 +1,4 @@
-package com.rdprassy.rest.webservices.restfulwebservices;
+package com.rdprassy.rest.webservices.restfulwebservices.helloworld;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,6 +24,7 @@ public class HelloWorldController {
 	@GetMapping(path = "/hello-world")
 	public String helloWorld() {
 		
+		 
 		return "Hello World";
 		
 	}
@@ -31,9 +32,9 @@ public class HelloWorldController {
 	
 	@GetMapping(path = "/hello-world-bean")
 	public HelloWorldBean helloWorldBean() {
-		throw new RuntimeException("Go easy Man, Things will be solved. Contact rdprassy");
+//		throw new RuntimeException("Go easy Man, Things will be solved. Contact rdprassy");
 		
-//		return new HelloWorldBean("Hello World Changed");
+		return new HelloWorldBean("Hello World Changed");
 		
 	}
 	
