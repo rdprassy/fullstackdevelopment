@@ -74,4 +74,9 @@ export class ListTodosComponent implements OnInit {
     this.router.navigate(['todos',id])
   }
 
+  createTodo(){
+    console.log("able to create Todo")
+    this.router.navigate(['todos',-1])
+  }
+
 }

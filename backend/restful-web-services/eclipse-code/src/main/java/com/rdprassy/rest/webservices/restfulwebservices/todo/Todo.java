@@ -70,6 +70,10 @@ public class Todo {
 	public void setDone(boolean isDone) {
 		this.isDone = isDone;
 	}
+	
+	protected Todo() {
+		
+	}
 
 	public Todo(long id, String username, String description, Date targetDate, boolean isDone) {
 		super();
