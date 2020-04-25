@@ -9,7 +9,11 @@ ngModel is two way data binding -->
     <div>
         Username: <input type="text" name="username" value="{{username}}" [(ngModel)]="username">
         Password: <input type="password" name="password" [(ngModel)]="password">
-        <button (click)=handleLogin() class="btn btn-success">Login</button>
+
+
+        <button (click)=handleBasicLogin() class="btn btn-success">Login</button> 
+
+        <!-- <button (click)=handleLogin() class="btn btn-success">Login</button> -->
         <!-- no usage of onclick in the button attribute -->
 
     </div>
