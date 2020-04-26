@@ -3,6 +3,9 @@ import { LogoutComponent } from '../logout/logout.component';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import {map} from 'rxjs/operators'
 
+export const TOKEN = 'token'
+export const AUTHENTICATED_USER = 'authenticateduser'
+
 @Injectable({
   providedIn: 'root'
 })
@@ -37,8 +40,8 @@ export class BasicAuthenticationService {
       map( 
         data =>{
 
-      sessionStorage.setItem('authenticateduser',username);
-      sessionStorage.setItem('token',basicAuthHeaderString);
+      sessionStorage.setItem(AUTHENTICATED_USER,username);
+      sessionStorage.setItem(TOKEN,basicAuthHeaderString);
       return data;
         }
       )
@@ -56,7 +59,7 @@ createBasicAuthenticationHttpHeader(){
 
 getAuthenticatedUser(){
 
-  return sessionStorage.getItem('authenticateduser')
+  return sessionStorage.getItem(AUTHENTICATED_USER)
     
 }
 
@@ -64,19 +67,19 @@ getAuthenticatedToken(){
 
 
   if(this.getAuthenticatedUser())
-  return sessionStorage.getItem('token')
+  return sessionStorage.getItem(TOKEN)
     
 }
 
   isUserLoggedIn(){
-    let user= sessionStorage.getItem('authenticateduser')
+    let user= sessionStorage.getItem(AUTHENTICATED_USER)
     return !(user===null)
   }
 
   logout(){
 
-    sessionStorage.removeItem('authenticateduser')
-    sessionStorage.removeItem('token')
+    sessionStorage.removeItem(AUTHENTICATED_USER)
+    sessionStorage.removeItem(TOKEN)
 
 
   }
