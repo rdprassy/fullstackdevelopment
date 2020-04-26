@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { LogoutComponent } from '../logout/logout.component';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import {map} from 'rxjs/operators'
+import { API_URL } from '../app.constants';
 
 export const TOKEN = 'token'
 export const AUTHENTICATED_USER = 'authenticateduser'
@@ -35,7 +36,7 @@ export class BasicAuthenticationService {
       Authorization: basicAuthHeaderString
     })
     console.log(name)
-    return this.http.get<AuthenticationBean>(`http://localhost:8080/basicauth`,{headers: headers})
+    return this.http.get<AuthenticationBean>(`${API_URL}/basicauth`,{headers: headers})
     .pipe(
       map( 
         data =>{
